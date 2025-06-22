@@ -5,7 +5,9 @@
   const taskList = document.getElementById('task-list');
 
   // Add task on button click
-  addButton.addEventListener('click', addTask);
+ addButton.addEventListener('click', () => {
+    addTask();
+  });
 
   // Add task on Enter key
   taskInput.addEventListener('keypress', (event) => {
@@ -31,9 +33,7 @@
     li.textContent = taskText;
 
     // Create remove button
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Remove';
-    removeBtn.className = 'remove-btn';
+    removeBtn.classList.add('remove-btn');
 
     // Remove button click handler
     removeBtn.onclick = () => {
